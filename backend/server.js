@@ -17,29 +17,7 @@ const adminEmails = String(process.env.ADMIN_EMAILS ?? "")
   .filter(Boolean);
 const googleOAuthClient = googleClientId ? new OAuth2Client(googleClientId) : null;
 
-const allowedOrigins = [
-  /^http:\/\/localhost:\d+$/,
-  /^http:\/\/127\.0\.0\.1:\d+$/,
-];
-
-app.use(
-  cors({
-    origin(origin, callback) {
-      if (!origin) {
-        callback(null, true);
-        return;
-      }
-
-      const isAllowed = allowedOrigins.some((pattern) => pattern.test(origin));
-      if (isAllowed) {
-        callback(null, true);
-        return;
-      }
-
-      callback(new Error(`Origem não permitida por CORS: ${origin}`));
-    },
-  }),
-);
+app.use(cors())
 app.use(express.json());
 
 function isValidEmail(email) {
