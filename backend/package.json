@@ -4,6 +4,7 @@
   "private": true,
   "description": "Projeto React da plataforma Saude Saudavel",
   "scripts": {
+    "build": "npm install",
     "dev": "nodemon server.js"
   },
   "keywords": [],
