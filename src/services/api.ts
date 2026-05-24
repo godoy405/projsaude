@@ -1,4 +1,4 @@
-const DEFAULT_API_BASE_URL = "https://projsaude-join.vercel.app/api";
+const DEFAULT_API_BASE_URL = "https://projsaude.vercel.app/";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? DEFAULT_API_BASE_URL;
 const TOKEN_STORAGE_KEY = "projsaude_auth_token";
 const ROLE_STORAGE_KEY = "projsaude_auth_role";
